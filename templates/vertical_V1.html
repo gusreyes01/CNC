@@ -8,6 +8,7 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
   <style>
   body {
     padding-top: 40px;
@@ -50,41 +51,102 @@
     border-top-right-radius: 0;
   }
   </style>
+  <script>
+$( document ).ready(function() {
+    $('#cnc_x1,#cnc_y1,#cnc_x2,#cnc_y2').attr('readonly', true);
+});
+  // A block.
+function calcular(){    
+
+  
+    var var1 = $('#rad').val() * Math.cos($('#ang').val());
+    var var2 = ($('#rad').val() - var1);
+    var var3 = ( var2 / Math.tan($('#ang').val()));
+    var var4 = ( ($('#rad').val()*Math.sin($('#ang').val()))-var3);
+    console.log("1. :  "+var1);
+    console.log("2. :  "+var2);
+    console.log("3. :  "+var3);
+    console.log("4. :  "+var4);
+ 
+    $('#cnc_x1').val( ( parseFloat($('#pd_x').val())+var2).toFixed(3) );
+    $('#cnc_y1').val( ( parseFloat($('#pd_y').val())+var3).toFixed(3) );
+
+    $('#cnc_x2').val ( parseFloat($('#pd_x').val()).toFixed(3) );
+    $('#cnc_y2').val ( parseFloat($('#pd_y').val()-var4).toFixed(3) ) ;
+
+
+}
+  </script>
 </head>
 <body>
 
   <div class="container">
 
     <form class="form-signin" role="form">
-      <h2 class="form-signin-heading">Selecciona tipo de corte : </h2>
+      <h2 class="form-signin-heading">Calcular CNC (Vertical 1) : </h2>
+      <br>
       <div class="row">
         <div class="col-xs-2">
-          <label >Punto Dibujante</label>
+          <label >Angulo</label>
         </div>
         <div class="col-xs-2">
-         <input type="text" class="form-control" id="" placeholder="X">
+         <input value="45" type="number" class="form-control" id="ang" placeholder="">
        </div>
        <div class="col-xs-2">
-         <input type="text" class="form-control" id="" placeholder="Y">
+         <label >o</label>
        </div>
      </div>
      <br>
-           <div class="row">
-        <div class="col-xs-2">
-          <label >CNC 1</label>
-        </div>
-        <div class="col-xs-2">
-         <input type="text" class="form-control" id="" placeholder="X">
-       </div>
-       <div class="col-xs-2">
-         <input type="text" class="form-control" id="" placeholder="Y">
-       </div>
+   <div class="row">
+      <div class="col-xs-2">
+       <label >Radio</label>
      </div>
-     <br>
-     <a href="/vertical/"><button class="btn btn-lg btn-primary btn-block" type="button">Calcular</button></a>
-   </form>
+     <div class="col-xs-2">
+       <input value="5" type="number" class="form-control" id="rad" placeholder="R">
+     </div>
+   </div>
+   <br>
+   <div class="row">
+    <div class="col-xs-2">
+      <label >Punto Dibujante</label>
 
- </div> <!-- /container -->
+    </div>
+    <div class="col-xs-2">
+     <input value="2" type="number" class="form-control" id="pd_x" placeholder="X">
+   </div>
+   <div class="col-xs-2">
+     <input value="2"  type="number" class="form-control" id="pd_y" placeholder="Y">
+   </div>
+ </div>
+ <br>
+ <div class="row">
+  <div class="col-xs-2">
+    <label >CNC 1</label>
+  </div>
+  <div class="col-xs-3">
+   <input type="number" class="form-control" id="cnc_x1" placeholder="X">
+ </div>
+ <div class="col-xs-3">
+   <input type="number" class="form-control" id="cnc_y1" placeholder="Y">
+ </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-2">
+    <label >CNC 2</label>
+  </div>
+  <div class="col-xs-3">
+   <input type="number" class="form-control" id="cnc_x2" placeholder="X">
+ </div>
+ <div class="col-xs-3">
+   <input type="number" class="form-control" id="cnc_y2" placeholder="Y">
+ </div>
+</div>
+<br>
+<button class="btn btn-lg btn-primary btn-block" type="button" onclick="calcular()">Calcular</button>
+</form>
+
+</div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
