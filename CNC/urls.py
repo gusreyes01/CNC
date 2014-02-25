@@ -17,10 +17,10 @@ urlpatterns = patterns('',
     url(r'^vertical/V2/$', 'app.views.vertical_V2', name='vertical_V2'),
     url(r'^vertical/V3/$', 'app.views.vertical_V3', name='vertical_V3'),
     url(r'^vertical/V4/$', 'app.views.vertical_V4', name='vertical_V4'),
-    url(r'^horizontal/H1/$', 'app.views.horizontal_V1', name='horizontal_V1'),
-    url(r'^horizontal/H2/$', 'app.views.horizontal_V2', name='horizontal_V2'),
-    url(r'^horizontal/H3/$', 'app.views.horizontal_V3', name='horizontal_V3'),
-    url(r'^horizontal/H4/$', 'app.views.horizontal_V4', name='horizontal_V4'),
+    url(r'^horizontal/H1/$', 'app.views.horizontal_H1', name='horizontal_H1'),
+    url(r'^horizontal/H2/$', 'app.views.horizontal_H2', name='horizontal_H2'),
+    url(r'^horizontal/H3/$', 'app.views.horizontal_H3', name='horizontal_H3'),
+    url(r'^horizontal/H4/$', 'app.views.horizontal_H4', name='horizontal_H4'),
 
 )
 
