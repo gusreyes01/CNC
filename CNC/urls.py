@@ -14,6 +14,13 @@ urlpatterns = patterns('',
     url(r'^horizontal/$', 'app.views.horizontal', name='horizontal'),
     url(r'^vertical/$', 'app.views.vertical', name='vertical'),
     url(r'^vertical/V1/$', 'app.views.vertical_V1', name='vertical_V1'),
+    url(r'^vertical/V2/$', 'app.views.vertical_V2', name='vertical_V2'),
+    url(r'^vertical/V3/$', 'app.views.vertical_V3', name='vertical_V3'),
+    url(r'^vertical/V4/$', 'app.views.vertical_V4', name='vertical_V4'),
+    url(r'^vertical/H1/$', 'app.views.horizontal_V1', name='horizontal_V1'),
+    url(r'^vertical/H2/$', 'app.views.horizontal_V2', name='horizontal_V2'),
+    url(r'^vertical/H3/$', 'app.views.horizontal_V3', name='horizontal_V3'),
+    url(r'^vertical/H4/$', 'app.views.horizontal_V4', name='horizontal_V4'),
 
 )
 
