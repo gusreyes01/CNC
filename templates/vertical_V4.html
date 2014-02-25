@@ -76,11 +76,11 @@ Math.radians = function(degrees) {
     console.log("3. :  "+var3);
     console.log("4. :  "+var4);
  
-    $('#cnc_x1').val( ( parseFloat($('#pd_x').val())+var2).toFixed(3) );
-    $('#cnc_y1').val( ( parseFloat($('#pd_y').val())+var3).toFixed(3) );
+    $('#cnc_x1').val( ( parseFloat($('#pd_x').val())).toFixed(3) );
+    $('#cnc_y1').val( ( parseFloat($('#pd_y').val())+var4).toFixed(3) );
 
-    $('#cnc_x2').val ( parseFloat($('#pd_x').val()).toFixed(3) );
-    $('#cnc_y2').val ( parseFloat($('#pd_y').val()-var4).toFixed(3) ) ;
+    $('#cnc_x2').val ( parseFloat($('#pd_x').val()-var2).toFixed(3) );
+    $('#cnc_y2').val ( parseFloat($('#pd_y').val()-var3).toFixed(3) ) ;
 
 
 }

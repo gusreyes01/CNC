@@ -71,16 +71,16 @@ Math.radians = function(degrees) {
     var var3 = ( var2 / tan_angulo);
     var var4 = ( ($('#rad').val()*sen_angulo)-var3);
     
-    console.log("1. :  "+var1);
-    console.log("2. :  "+var2);
-    console.log("3. :  "+var3);
-    console.log("4. :  "+var4);
+    var var1 = $('#rad').val() * cos_angulo;
+    var var2 = parseFloat(($('#rad').val() - var1));
+    var var3 = parseFloat(( var2 / tan_angulo));
+    var var4 = ( ($('#rad').val()*sen_angulo)-var3);
  
     $('#cnc_x1').val( ( parseFloat($('#pd_x').val())+var2).toFixed(3) );
     $('#cnc_y1').val( ( parseFloat($('#pd_y').val())+var3).toFixed(3) );
 
-    $('#cnc_x2').val ( parseFloat($('#pd_x').val()).toFixed(3) );
-    $('#cnc_y2').val ( parseFloat($('#pd_y').val()-var4).toFixed(3) ) ;
+    $('#cnc_x2').val ( parseFloat(parseFloat($('#pd_x').val())-var4).toFixed(3) );
+    $('#cnc_y2').val ( parseFloat(parseFloat($('#pd_y').val())).toFixed(3) ) ;
 
 
 }
